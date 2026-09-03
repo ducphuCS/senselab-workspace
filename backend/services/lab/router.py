@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 from backend.services.lab.schemas import ExperimentRead, TestSessionRead
 
-router = APIRouter(prefix="/api/v1/lab", tags=["Lab"])
+router = APIRouter(prefix="/api/lab", tags=["Lab"])
 
 
 @router.get("/experiments", response_model=list[ExperimentRead])

@@ -23,7 +23,7 @@ The backend is structured into domain services corresponding to the **4 function
             ▼                              ▼     ▼                              ▼
  ┌─────────────────────┐       ┌───────────────┐ ┌───────────────────┐ ┌─────────────────────┐
  │  Overview Service   │       │Library Service│ │    Lab Service    │ │   Analyze Service   │
- │    /api/overview    │       │/api/v1/library│ │    /api/v1/lab    │ │  /api/v1/analyze    │
+ │    /api/overview    │       │ /api/library  │ │     /api/lab      │ │    /api/analyze     │
  ├─────────────────────┤       ├───────────────┤ ├───────────────────┤ ├─────────────────────┤
  │ • Workspace summary │       │ • Test Methods│ │ • Experiments     │ │ • ANOVA tables      │
  │ • Project overview  │       │ • Attribute   │ │ • Test sessions   │ │ • Correlation matrix│
@@ -40,9 +40,9 @@ The backend is structured into domain services corresponding to the **4 function
 | Functional Group | Route Prefix | Primary Responsibilities | Domain Entities |
 |---|---|---|---|
 | **Overview** | `/api/overview` | Workspace metrics, experiment progress, workload tracking, recent activity | `SummaryMetrics`, `ActivityLog`, `ProjectSummary` |
-| **Library** | `/api/v1/library` | Pre-test configurations and registries | `TestMethod`, `AttributeSet`, `Attribute`, `Panel` |
-| **Lab** | `/api/v1/lab` | Live experiment lifecycle, test execution, 3-digit blind coding, sample serving order | `Project`, `Experiment`, `TestSession`, `Sample`, `ServingPlan` |
-| **Analyze** | `/api/v1/analyze` | Statistical computations and results | `AnovaResult`, `CorrelationMatrix`, `PanelPerformance`, `TrendResult` |
+| **Library** | `/api/library` | Pre-test configurations and registries | `TestMethod`, `AttributeSet`, `Attribute`, `Panel` |
+| **Lab** | `/api/lab` | Live experiment lifecycle, test execution, 3-digit blind coding, sample serving order | `Project`, `Experiment`, `TestSession`, `Sample`, `ServingPlan` |
+| **Analyze** | `/api/analyze` | Statistical computations and results | `AnovaResult`, `CorrelationMatrix`, `PanelPerformance`, `TrendResult` |
 
 ---
 
@@ -60,7 +60,7 @@ backend/
 ├── services/
 │   ├── library/                 # === Library Service ===
 │   │   ├── __init__.py
-│   │   ├── router.py            # Endpoints: /api/v1/library/*
+│   │   ├── router.py            # Endpoints: /api/library/*
 │   │   ├── models.py            # (Private) ORM database models
 │   │   ├── schemas.py           # (Public) Pydantic schemas / DTOs
 │   │   ├── repository.py        # (Private) Database access layer
@@ -68,7 +68,7 @@ backend/
 │   │
 │   ├── lab/                     # === Lab Service ===
 │   │   ├── __init__.py
-│   │   ├── router.py            # Endpoints: /api/v1/lab/*
+│   │   ├── router.py            # Endpoints: /api/lab/*
 │   │   ├── models.py            # (Private) ORM database models
 │   │   ├── schemas.py           # (Public) Pydantic schemas / DTOs
 │   │   ├── repository.py        # (Private) Database access layer
@@ -78,7 +78,7 @@ backend/
 │   │
 │   └── analyze/                 # === Analyze Service ===
 │       ├── __init__.py
-│       ├── router.py            # Endpoints: /api/v1/analyze/*
+│       ├── router.py            # Endpoints: /api/analyze/*
 │       ├── schemas.py           # (Public) Pydantic schemas / DTOs
 │       └── stats/               # Numerical & statistical computation
 │           ├── anova.py         # One-way ANOVA computation

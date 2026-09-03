@@ -14,7 +14,7 @@ from backend.services.analyze.stats import (
     trends,
 )
 
-router = APIRouter(prefix="/api/v1/analyze", tags=["Analyze"])
+router = APIRouter(prefix="/api/analyze", tags=["Analyze"])
 
 
 @router.get("/anova/{test_id}", response_model=AnovaResult)

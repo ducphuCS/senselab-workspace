@@ -8,7 +8,7 @@ from backend.services.library.schemas import (
     PanelRead,
 )
 
-router = APIRouter(prefix="/api/v1/library", tags=["Library"])
+router = APIRouter(prefix="/api/library", tags=["Library"])
 
 
 @router.get("/methods", response_model=list[TestMethodRead])
