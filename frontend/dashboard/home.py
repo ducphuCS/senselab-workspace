@@ -47,14 +47,18 @@ def render() -> None:
                     f"<div style='min-height: 3.5rem; font-size: 0.875rem; opacity: 0.75; line-height: 1.4;'>{group['description']}</div>",
                     unsafe_allow_html=True,
                 )
-                st.button(
-                    f"Open {group['name']}",
-                    key=f"group_{group['key']}",
-                    width="stretch",
-                    on_click=lambda g=group: st.toast(
-                        f"'{g['name']}' is not implemented yet."
-                    ),
-                )
+                if group["key"] == "library":
+                    if st.button("Open Library", key="group_library", use_container_width=True):
+                        st.switch_page("library/page.py")
+                else:
+                    st.button(
+                        f"Open {group['name']}",
+                        key=f"group_{group['key']}",
+                        use_container_width=True,
+                        on_click=lambda g=group: st.toast(
+                            f"'{g['name']}' is not implemented yet."
+                        ),
+                    )
 
     st.divider()
 

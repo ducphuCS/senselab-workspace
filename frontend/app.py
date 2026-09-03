@@ -32,4 +32,10 @@ dashboard = st.Page(
     default=True,
 )
 
-st.navigation({"Home": [dashboard]}, position="hidden").run()
+library = st.Page(
+    "library/page.py",
+    title="Library",
+    url_path="library",
+)
+
+st.navigation([dashboard, library], position="hidden").run()
