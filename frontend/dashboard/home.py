@@ -16,7 +16,7 @@ def _load_summary() -> dict:
     so the page still renders while the backend is down (dev convenience)."""
     if not backend_healthy():
         return {}
-    return api_get("/api/summary")
+    return api_get("/api/overview")
 
 
 def render() -> None:
