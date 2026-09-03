@@ -92,6 +92,14 @@ The backend follows a **Modular Service Architecture (Microservice-Ready Monolit
    - Never hardcode backend URLs or import backend ORM models directly in frontend pages.
 3. **Streamlit Built-in Philosophy (Decision D8):**
    - Prefer built-in Streamlit widgets and components; avoid over-customized HTML/CSS widgets where standard components suffice.
+4. **Hub-and-Spoke Navigation Pattern (No Sidebar):**
+   - App routing uses `st.navigation([...], position="hidden")` without a persistent sidebar.
+   - **Home Page (`frontend/dashboard/home.py`):** Acts as the central landing workspace displaying summary metrics, recent activity, and launcher cards for each functional group (`Library`, `Lab`, `Analyze`).
+   - **Card Navigation:** Clicking `"Open <Group>"` (e.g. `"Open Library"`) on the Home page routes via `st.switch_page("<group>/page.py")` to that functional group's hub page.
+   - **Compact Single-Row Header:**
+     - Hub pages place the title and return button (`"← Dashboard"`) on the **same single row** using `st.columns([6, 1], vertical_alignment="center")` to maximize vertical space efficiency.
+     - Content is organized into `st.tabs` directly below the single-row header.
+   - **Flat URL Paths:** `st.Page(url_path=...)` must never contain nested slashes `/` (e.g. use `url_path="library"`, not `"library/home"`).
 
 ---
 
