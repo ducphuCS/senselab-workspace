@@ -2,7 +2,6 @@
 
 from fastapi import APIRouter
 from backend.services.library.schemas import (
-    PanelistRead,
     TestMethodRead,
     AttributeRead,
     AttributeSetRead,
@@ -15,12 +14,6 @@ router = APIRouter(prefix="/api/v1/library", tags=["Library"])
 @router.get("/methods", response_model=list[TestMethodRead])
 def list_test_methods() -> list[TestMethodRead]:
     """List registered sensory test methods."""
-    return []
-
-
-@router.get("/panelists", response_model=list[PanelistRead])
-def list_panelists() -> list[PanelistRead]:
-    """List registered panelists."""
     return []
 
 

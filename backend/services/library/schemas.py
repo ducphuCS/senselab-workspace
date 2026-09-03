@@ -28,20 +28,9 @@ class AttributeSetRead(AttributeSetBase, TimestampMixin):
     id: str
 
 
-class PanelistBase(SchemaBase):
-    name: str
-    email: str | None = None
-    status: Literal["active", "inactive", "training"] = "active"
-
-
-class PanelistRead(PanelistBase, TimestampMixin):
-    id: str
-
-
 class PanelBase(SchemaBase):
     name: str
     description: str | None = None
-    panelist_ids: list[str] = Field(default_factory=list)
 
 
 class PanelRead(PanelBase, TimestampMixin):

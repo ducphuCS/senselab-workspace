@@ -1,20 +1,20 @@
-"""Analytics service API endpoints."""
+"""Analyze service API endpoints."""
 
 from fastapi import APIRouter
-from backend.services.analytics.schemas import (
+from backend.services.analyze.schemas import (
     AnovaResult,
     CorrelationMatrixResult,
     PanelPerformanceResult,
     TrendAnalysisResult,
 )
-from backend.services.analytics.stats import (
+from backend.services.analyze.stats import (
     anova,
     correlation,
     performance,
     trends,
 )
 
-router = APIRouter(prefix="/api/v1/analytics", tags=["Analytics"])
+router = APIRouter(prefix="/api/v1/analyze", tags=["Analyze"])
 
 
 @router.get("/anova/{test_id}", response_model=AnovaResult)

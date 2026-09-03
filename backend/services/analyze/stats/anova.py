@@ -1,7 +1,7 @@
 """ANOVA computations for sensory data (Decision D2)."""
 
 from typing import Sequence
-from backend.services.analytics.schemas import AnovaResult, AnovaRow
+from backend.services.analyze.schemas import AnovaResult, AnovaRow
 
 
 def calculate_one_way_anova(

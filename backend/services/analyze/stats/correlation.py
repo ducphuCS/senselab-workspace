@@ -1,6 +1,6 @@
 """Sensory attribute correlation matrix computation (Decision D2)."""
 
-from backend.services.analytics.schemas import CorrelationMatrixResult
+from backend.services.analyze.schemas import CorrelationMatrixResult
 
 
 def calculate_correlation_matrix(

@@ -1,4 +1,4 @@
-"""Library Microservice package (Test Methods, Attributes, Panels, Panelists)."""
+"""Library service package (Test Methods, Attributes, Panels)."""
 
 from backend.services.library.router import router
 

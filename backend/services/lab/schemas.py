@@ -17,7 +17,7 @@ class SampleServingItem(SchemaBase):
 
 
 class ServingPlan(SchemaBase):
-    panelist_id: str
+    plan_code: str = Field(..., description="Serving plan code or replicate identifier")
     items: list[SampleServingItem]
 
 

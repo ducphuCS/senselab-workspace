@@ -3,16 +3,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.app.routers import summary
+from backend.app.routers import overview
 from backend.services.library import router as library_router
 from backend.services.lab import router as lab_router
-from backend.services.ballot import router as ballot_router
-from backend.services.analytics import router as analytics_router
+from backend.services.analyze import router as analyze_router
 
 app = FastAPI(
     title="Compusense Backend",
     version="0.1.0",
-    description="Sensory Lab Workspace Backend & Microservices Hub",
+    description="Sensory Lab Workspace Backend & API Hub",
 )
 
 # Dev-only CORS: allow the Streamlit frontend to reach this service.
@@ -23,14 +22,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Summary & Health Check
-app.include_router(summary.router)
-
-# Domain Microservice Routers
+# Domain Service Routers (4 Functional Groups)
+app.include_router(overview.router)
 app.include_router(library_router)
 app.include_router(lab_router)
-app.include_router(ballot_router)
-app.include_router(analytics_router)
+app.include_router(analyze_router)
 
 
 @app.get("/api/health")

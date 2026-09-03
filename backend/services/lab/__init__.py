@@ -1,4 +1,4 @@
-"""Lab & Experiment Execution Microservice."""
+"""Lab & Experiment Execution Service."""
 
 from backend.services.lab.router import router
 
