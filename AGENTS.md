@@ -37,3 +37,17 @@ The backend follows a **Modular Service Architecture (Microservice-Ready Monolit
 5. **Enforce Boundary Tests:**
    - Ensure changes pass architectural boundary tests in `tests/test_architecture_boundaries.py`.
 
+---
+
+## Git & Commit Discipline Rules
+
+1. **State Commit Intent Before Committing:**
+   - When the user says *"Approve to commit"*, always state the exact intention before running the commit:
+     - Exact list of files to stage/commit.
+     - Any files that will remain unstaged.
+     - Proposed commit message.
+2. **Short & Focused Commits:**
+   - Prefer small, atomic, single-concern commits (e.g. docs-only, single schema, single router endpoint) over broad multi-component batches.
+   - Never mix unrelated concerns (e.g., documentation vs. service implementation vs. configuration) in a single commit.
+
+
