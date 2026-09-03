@@ -29,5 +29,5 @@ Open http://localhost:8501 in your browser.
 ## Status
 
 Draft: home page with metrics, workspace areas, and recent activity served via
-`GET /api/summary`. Persistence, real data models, and the Overview / Library /
+`GET /api/overview`. Persistence, real data models, and the Overview / Library /
 Lab / Analyze pages are next.

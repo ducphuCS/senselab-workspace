@@ -4,7 +4,7 @@ This is the draft version of letter of intention. Its purpose is to share my ide
 
 The project is an application built for operations of a Sensory lab. The roles of this lab are to support the product development via define sensory attributes, develop sensory methods, recruit panelists, run experiments, and analyze data.
 
-1. Need to become a centralized workspace for daiy work of Sensory Lab.
+1. Need to become a centralized workspace for daily work of Sensory Lab.
 2. Support users to track the timeline and progress of experiments.
 3. Track performance of panels and panelists
 4. Analyze and support decision making based on sensory data.
